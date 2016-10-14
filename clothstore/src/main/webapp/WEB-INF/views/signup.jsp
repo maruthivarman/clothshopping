@@ -11,6 +11,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <title>SIGN UP</title>
 
 <style type="text/css">
@@ -65,7 +66,7 @@ body {
 					Number</label>
 				<div class="col-sm-9">
 					<input type="text" id="mobile number" name="mobile_number"
-						placeholder="Enter your mobile number" class="form-control">
+						placeholder="Enter your mobile number" class="form-control" >
 				</div>
 			</div>
 			

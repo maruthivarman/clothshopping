@@ -243,7 +243,7 @@ Diwali offers coming soon.. Get updated
   </div>
 </div>
 <ul class="nav navbar-nav navbar-right">
- <a href="getlogin"><button type="button" class="btn btn-success btn-lg btn3d"><span class="glyphicon glyphicon-ok"></span>Login</button></a>
+ <a href="<c:url value="/getlogin" />" ><button type="button" class="btn btn-success btn-lg btn3d"><span class="glyphicon glyphicon-ok"></span>Login</button></a>
  <a href="getsignup"><button type="button" class="btn btn-success btn-lg btn3d"><span class="glyphicon glyphicon-download-alt"></span>Sign up</button></a>
  <button type="button" class="btn btn-success btn-lg btn3d"><span class="glyphicon glyphicon-cloud"></span> Cart</button>
  </ul>
