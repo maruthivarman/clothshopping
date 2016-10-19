@@ -71,7 +71,7 @@ public class UserTest {
 		
 		role.setEnabled("true");
 		
-		user.setRole(role);
+ 		user.setRole(role);
 		role.setUser(user);
 		userDAO.insertUser(user);
 		//userDAO.deleteUser(1);

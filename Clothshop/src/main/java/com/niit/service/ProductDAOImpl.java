@@ -48,13 +48,9 @@ public class ProductDAOImpl implements ProductDAO {
 	
 	
 
-	@Override
-	public void updateProduct(Product product) {
-		// TODO Auto-generated method stub
+	
 
-	}
-
-	@Override
+	@Transactional
 	public void deleteProduct(int id) {
 		Product deleteProduct = new Product();
 		deleteProduct.setProductid(id);
@@ -66,6 +62,13 @@ public class ProductDAOImpl implements ProductDAO {
 	public void deleteAllProduct(Product product) {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Transactional
+	public void updateProduct(Product product) {
+		// TODO Auto-generated method stub
+		sessionFactory.getCurrentSession().saveOrUpdate(product);
+		
 	}
 
 
