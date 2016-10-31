@@ -16,22 +16,30 @@ import org.springframework.stereotype.Component;
 public class User {
 	
 	@Id
-	@Column
+	
 	@GeneratedValue
 	private int userid;
-	@Column
+	
 	private String username;
-	@Column
+
 	private String emailid;
-	@Column
+	
 	private String password;
-	@Column
+	
 	private String gender;
-	@Column
+	
 	private long mobile_number;
-	@Column
+	
 	private String address;
 	
+	private boolean enabled=true;
+	
+	public boolean getEnabled() {
+		return enabled;
+	}
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "userid")
 	private Role role;

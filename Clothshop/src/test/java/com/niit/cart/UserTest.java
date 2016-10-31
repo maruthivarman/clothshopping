@@ -59,17 +59,17 @@ public class UserTest {
         CodpaymentDAO codpaymentDAO=(CodpaymentDAO) context.getBean("CodpaymentDAO");	
         Codpayment codpayment=(Codpayment) context.getBean("codpayment");
 		*/
-		user.setUsername("Ponmuthu");
-		user.setPassword("muthu");
+		user.setUsername("maruthi");
+		user.setPassword("varman");
 		user.setAddress("123,asdf");
-		user.setEmailid("ponmuthu@gmail.com");
+		user.setEmailid("maruthi@gmail.com");
 		user.setGender("male");
-		user.setMobile_number(99999999);
+		user.setMobile_number(9876543);
 		
 		//role.setRoleid(1);
 		role.setRole("user");
 		
-		role.setEnabled("true");
+		
 		
  		user.setRole(role);
 		role.setUser(user);

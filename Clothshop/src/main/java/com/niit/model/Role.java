@@ -19,21 +19,21 @@ import org.springframework.stereotype.Component;
 public class Role {
 
 	@Id
-	@Column
+	
 	@GeneratedValue(generator = "newGenerator")
 	@GenericGenerator(name = "newGenerator", strategy = "foreign", parameters = {
 			@Parameter(value = "user", name = "property") })
 	private int userid;
-	@Column
+	
 	private int roleid;
-	@Column
+	
 	private String role;
-	@Column
+	
 	private String username;
-	@Column
+	
 	private String password;
-	@Column
-	private String enabled;
+	
+	private boolean enabled;
 
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "userid")
@@ -87,11 +87,11 @@ public class Role {
 		this.role = role;
 	}
 
-	public String getEnabled() {
+	public boolean getEnabled() {
 		return enabled;
 	}
 
-	public void setEnabled(String enabled) {
+	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 	}
 }

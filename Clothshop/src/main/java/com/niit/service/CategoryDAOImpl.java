@@ -49,13 +49,13 @@ public class CategoryDAOImpl implements CategoryDAO {
 	
 	
 
-	@Override
+	@Transactional
 	public void updateCategory(Category category) {
 		// TODO Auto-generated method stub
 
 	}
 
-	@Override
+	@Transactional
 	public void deleteCategory(int id) {
 		Category deleteCategory = new Category();
 		deleteCategory.setcategoryid(id);
@@ -63,7 +63,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 
 	}
 
-	@Override
+	@Transactional
 	public void deleteAllCategory(Category category) {
 		// TODO Auto-generated method stub
 
