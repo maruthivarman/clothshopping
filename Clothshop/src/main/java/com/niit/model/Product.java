@@ -20,9 +20,10 @@ import org.springframework.stereotype.Component;
 public class Product {
 	
 	@Id
-	@Column
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id")
+	@GeneratedValue
 	private int productid;
+	
 	@Column
 	private String productname;
 	@Column
@@ -30,9 +31,9 @@ public class Product {
 	@Column
 	private String size;
 	@Column
-	private int categoryid;
+	private String categoryname;
 	@Column
-	private int supplierid;
+	private String suppliername;
 	@Column
 	private String color;
 	@Column
@@ -42,18 +43,20 @@ public class Product {
 	
 	//private Category category;
 	
-	public int getProductid()
-	{
-	 return productid;
-	}
-	public void setProductid(int productid)
-	{
-		this.productid=productid;
-	}
+	
 	public String getProductname()
 	{
 	 return productname;
 	}
+	
+	public int getProductid() {
+		return productid;
+	}
+
+	public void setProductid(int productid) {
+		this.productid = productid;
+	}
+
 	public void setProductname(String productname)
 	{
 		this.productname=productname;
@@ -74,21 +77,18 @@ public class Product {
 	{
 		this.size=size;
 	}
-	public int getCategoryid()
-	{
-	 return categoryid;
+	
+	public String getCategoryname() {
+		return categoryname;
 	}
-	public void setCategoryid(int categoryid)
-	{
-		this.categoryid=categoryid;
+	public void setCategoryname(String categoryname) {
+		this.categoryname = categoryname;
 	}
-	public int getSupplierid()
-	{
-	 return supplierid;
+	public String getSuppliername() {
+		return suppliername;
 	}
-	public void setSupplierid(int supplierid)
-	{
-		this.supplierid=supplierid;
+	public void setSuppliername(String suppliername) {
+		this.suppliername = suppliername;
 	}
 	public String getColor()
 	{

@@ -16,21 +16,29 @@ public class Cart {
 	@Id
 	@Column
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-private int userid;
+private int cartid;
 	@Column
+private String username;
+	
+public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
 private int productid;
 	@Column
 private int quantity;
 	@Column
 private int price;
-public int getUserid()
-{
- return userid;
-}
-public void setUserid(int userid)
-{
-	this.userid=userid;
-}
+
+	
+public int getCartid() {
+		return cartid;
+	}
+	public void setCartid(int cartid) {
+		this.cartid = cartid;
+	}
 public int getProductid()
 {
  return productid;

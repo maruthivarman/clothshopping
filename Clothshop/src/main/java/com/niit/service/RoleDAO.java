@@ -6,7 +6,7 @@ import com.niit.model.Role;
 
 public interface RoleDAO {
 	public List<Role> getAllRoles();
-	 public Role getRole(int roleid);
+	 public Role getRole(String username);
 	 public void insertRole(Role role);
 	 public void updateRole(Role role);
 	 public void deleteRole(int id);

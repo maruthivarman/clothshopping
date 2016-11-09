@@ -33,8 +33,8 @@ public class CartDAOImpl implements CartDAO {
 			return sessionFactory.getCurrentSession().createQuery("from Cart").list();	
 	}
 	@Transactional
-	public Cart getCart(int cartid) {
-		return (Cart)sessionFactory.getCurrentSession().get(Cart.class, cartid);
+	public List<Cart> getCart(String username) {
+		return sessionFactory.getCurrentSession().createQuery("from Cart where username='"+username+"'").list();
 	}
 	@Transactional
 	public void insertCart(Cart cart) {

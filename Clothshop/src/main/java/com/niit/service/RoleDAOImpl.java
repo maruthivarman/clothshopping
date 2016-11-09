@@ -34,8 +34,9 @@ public class RoleDAOImpl implements RoleDAO {
 			return sessionFactory.getCurrentSession().createQuery("from Role").list();	
 	}
 	@Transactional
-	public Role getRole(int roleid) {
-		return (Role)sessionFactory.getCurrentSession().get(Role.class, roleid);
+	public Role getRole(String username) {
+		
+		return (Role)sessionFactory.getCurrentSession().createQuery("from Role where username='"+username+"'").uniqueResult();
 	}
 	@Transactional
 	public void insertRole(Role role) {
