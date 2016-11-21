@@ -1,5 +1,6 @@
 package com.niit.service;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.hibernate.SessionFactory;
@@ -8,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.model.Cart;
-@Repository("CartDAO")
+@Repository
 public class CartDAOImpl implements CartDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
@@ -48,13 +49,23 @@ public class CartDAOImpl implements CartDAO {
 	@Transactional
 	public void deleteCart(int id) {
 		Cart deleteCart = new Cart();
-		deleteCart.setProductid(id);
+		deleteCart.setCartid(id);
 		sessionFactory.getCurrentSession().delete(deleteCart);
 		
 	}
 	@Transactional
 	public void deleteAllCart(Cart cart) {
 		// TODO Auto-generated method stub
+		
+	}
+	@Transactional
+	public List<Cart> validate(String username) throws IOException{
+		List<Cart> cart = getCart(username);
+		if(cart == null || cart.size() == 0){
+			throw new IOException(username +"");
+		}
+		
+		return cart;
 		
 	}
 

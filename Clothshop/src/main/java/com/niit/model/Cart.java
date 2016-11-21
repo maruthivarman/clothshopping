@@ -31,8 +31,16 @@ private int productid;
 private int quantity;
 	@Column
 private int price;
+	@Column
+	private String productname;
 
 	
+public String getProductname() {
+		return productname;
+	}
+	public void setProductname(String productname) {
+		this.productname = productname;
+	}
 public int getCartid() {
 		return cartid;
 	}

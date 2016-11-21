@@ -52,6 +52,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 	@Transactional
 	public void updateCategory(Category category) {
 		// TODO Auto-generated method stub
+		sessionFactory.getCurrentSession().saveOrUpdate(category);
 
 	}
 

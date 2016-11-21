@@ -43,7 +43,7 @@ public class SupplierDAOImpl implements SupplierDAO {
 	}
 	@Transactional
 	public void updateSupplier(Supplier supplier) {
-		// TODO Auto-generated method stub
+		sessionFactory.getCurrentSession().saveOrUpdate(supplier);
 		
 	}
 	@Transactional
