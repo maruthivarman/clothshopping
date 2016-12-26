@@ -58,7 +58,7 @@ public class ProductDAOImpl implements ProductDAO {
 
 	}
 
-	@Override
+	@Transactional
 	public void deleteAllProduct(Product product) {
 		// TODO Auto-generated method stub
 

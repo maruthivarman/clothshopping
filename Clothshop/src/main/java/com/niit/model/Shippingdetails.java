@@ -18,64 +18,63 @@ public class Shippingdetails {
 	@Id
 	@Column
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-private int userid;
-	@Column
-private int productid;
-	@Column
-private String address;
-	@Column
-private int deliverydate;
-	@Column
-private String status;
-	@Column
-private int amount;
+	 private int shippingdetailsid;
+	 private String username;
+	 private String productname;
+	 private String emailid;
+	 private int phonenumber;
+	 private int price;
+	 private String address;
+	 private int zipcode;
+	public int getShippingdetailsid() {
+		return shippingdetailsid;
+	}
+	public void setShippingdetailsid(int shippingdetailsid) {
+		this.shippingdetailsid = shippingdetailsid;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getProductname() {
+		return productname;
+	}
+	public void setProductname(String productname) {
+		this.productname = productname;
+	}
+	public String getEmailid() {
+		return emailid;
+	}
+	public void setEmailid(String emailid) {
+		this.emailid = emailid;
+	}
+	public int getPhonenumber() {
+		return phonenumber;
+	}
+	public void setPhonenumber(int phonenumber) {
+		this.phonenumber = phonenumber;
+	}
+	public int getPrice() {
+		return price;
+	}
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
 	
-public int getUserid()
-{
- return userid;
-}
-public void setUserid(int userid)
-{
-	this.userid=userid;
-}
-public int getProductid()
-{
- return productid;
-}
-public void setProductid(int productid)
-{
-	this.productid=productid;
-}
-public String getAddress()
-{
- return address;
-}
-public void setAddress(String address)
-{
-	this.address=address;
-}
-public int getDeliverydate()
-{
- return deliverydate;
-}
-public void setDeliverydate(int deliverydate)
-{
-	this.deliverydate=deliverydate;
-}
-public String getStatus()
-{
- return status;
-}
-public void setStatus(String status)
-{
-	this.status=status;
-}
-public int getAmount()
-{
- return amount;
-}
-public void setAmount(int amount)
-{
-	this.amount=amount;
-}
+	public int getZipcode() {
+		return zipcode;
+	}
+	public void setZipcode(int zipcode) {
+		this.zipcode = zipcode;
+	}
+	 
+	 
 }

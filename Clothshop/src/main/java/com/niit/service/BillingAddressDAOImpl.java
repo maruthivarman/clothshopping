@@ -33,31 +33,31 @@ public class BillingAddressDAOImpl implements BillingAddressDAO {
 		return sessionFactory.getCurrentSession().createQuery("from BillingAddress").list();
 	}
 
-	@Override
+	@Transactional
 	public BillingAddress getBillingAddress(int billingid) {
 		// TODO Auto-generated method stub
 		return (BillingAddress)sessionFactory.getCurrentSession().get(BillingAddress.class, billingid);
 	}
 
-	@Override
+	@Transactional
 	public void insertBillingAddress(BillingAddress billingaddress) {
 		sessionFactory.getCurrentSession().saveOrUpdate(billingaddress);
 
 	}
 
-	@Override
+	@Transactional
 	public void updateBillingAddress(BillingAddress billingaddress) {
 		// TODO Auto-generated method stub
 
 	}
 
-	@Override
+	@Transactional
 	public void deleteBillingAddress(int id) {
 		// TODO Auto-generated method stub
 
 	}
 
-	@Override
+	@Transactional
 	public void deleteAllBillingAddress(BillingAddress billingaddress) {
 		// TODO Auto-generated method stub
 

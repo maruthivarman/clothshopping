@@ -35,8 +35,8 @@ public class ShippingdetailsDAOImpl implements ShippingdetailsDAO {
 			return sessionFactory.getCurrentSession().createQuery("from Shippingdetails").list();	
 	}
 	@Transactional
-	public Shippingdetails getShippingdetails(int shippingdetailsid) {
-		return (Shippingdetails)sessionFactory.getCurrentSession().get(Shippingdetails.class, shippingdetailsid);
+	public Shippingdetails getShippingdetails(int userId) {
+		return (Shippingdetails)sessionFactory.getCurrentSession().get(Shippingdetails.class, userId);
 	}
 	@Transactional
 	public void insertShippingdetails(Shippingdetails shippingdetails) {
@@ -50,7 +50,7 @@ public class ShippingdetailsDAOImpl implements ShippingdetailsDAO {
 	@Transactional
 	public void deleteShippingdetails(int id) {
 		Shippingdetails deleteShippingdetails = new Shippingdetails();
-		deleteShippingdetails.setProductid(id);
+		deleteShippingdetails.setProductname("productname");
 		sessionFactory.getCurrentSession().delete(deleteShippingdetails);
 		
 	}
@@ -60,13 +60,13 @@ public class ShippingdetailsDAOImpl implements ShippingdetailsDAO {
 		
 	}
 
-	@Override
+	@Transactional
 	public List<Shippingdetails> getAllShipppingdetailss() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
+	@Transactional
 	public Shippingdetails getShipppingdetails(int shippingdetailsid) {
 		// TODO Auto-generated method stub
 		return null;

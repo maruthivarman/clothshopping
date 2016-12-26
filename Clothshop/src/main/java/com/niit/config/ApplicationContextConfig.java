@@ -14,19 +14,23 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.niit.model.BillingAddress;
 import com.niit.model.Cardpayment;
 import com.niit.model.Cart;
 import com.niit.model.Category;
 import com.niit.model.Codpayment;
+import com.niit.model.OrderConfirmation;
 import com.niit.model.Product;
 import com.niit.model.Role;
 import com.niit.model.Shippingdetails;
 import com.niit.model.Supplier;
 import com.niit.model.User;
+import com.niit.service.BillingAddressDAOImpl;
 import com.niit.service.CardpaymentDAOImpl;
 import com.niit.service.CartDAOImpl;
 import com.niit.service.CategoryDAOImpl;
 import com.niit.service.CodpaymentDAOImpl;
+import com.niit.service.ProductDAOImpl;
 import com.niit.service.RoleDAOImpl;
 import com.niit.service.ShippingdetailsDAOImpl;
 import com.niit.service.SupplierDAOImpl;
@@ -71,6 +75,8 @@ public class ApplicationContextConfig {
 	  sessionBuilder.addAnnotatedClass(Shippingdetails.class);
 	  sessionBuilder.addAnnotatedClass(Cardpayment.class);
 	  sessionBuilder.addAnnotatedClass(Codpayment.class);
+	  
+	  sessionBuilder.addAnnotatedClass(BillingAddress.class);
 	  return sessionBuilder.buildSessionFactory();	  
   } 
   @Autowired
@@ -108,7 +114,12 @@ public class ApplicationContextConfig {
   {
    return new SupplierDAOImpl(sessionFactory);
   }
-  
+  @Autowired(required=true)
+  @Bean(name = "ProductDAO")
+  public ProductDAOImpl getProductDAO(SessionFactory sessionFactory)
+  {
+   return new ProductDAOImpl(sessionFactory);
+  }
 
   @Autowired(required=true)
   @Bean(name = "cartDAO")
@@ -117,13 +128,13 @@ public class ApplicationContextConfig {
    return new CartDAOImpl(sessionFactory);
   }
   
-  /*@Autowired(required=true)
+ @Autowired(required=true)
   @Bean(name = "cardpaymentDAO")
   public CardpaymentDAOImpl getCardpaymentDAO(SessionFactory sessionFactory)
   {
    return new CardpaymentDAOImpl(sessionFactory);
   }
- */ 
+  
   @Autowired(required=true)
   @Bean(name = "codpaymentDAO")
   public CodpaymentDAOImpl getCodpaymentDAO(SessionFactory sessionFactory)
@@ -137,4 +148,17 @@ public class ApplicationContextConfig {
   {
    return new RoleDAOImpl(sessionFactory);
   }
+ 
+  /*@Autowired(required=true)
+  @Bean(name = "billingaddressDAO")
+  public BillingAddressDAOImpl getBillingAddressDAOImpl(SessionFactory sessionFactory)
+  {
+   return new BillingAddressDAOImpl(sessionFactory);
+  }
+  @Autowired(required=true)
+  @Bean(name = "orderconfirmationDAO")
+  public OrderConfirmationDAOImpl getOrderConfirmationDAOImpl(SessionFactory sessionFactory)
+  {
+   return new OrderConfirmationDAOImpl(sessionFactory);
+  }*/
   }

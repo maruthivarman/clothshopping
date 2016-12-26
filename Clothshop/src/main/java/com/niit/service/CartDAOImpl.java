@@ -59,12 +59,7 @@ public class CartDAOImpl implements CartDAO {
 		
 	}
 	@Transactional
-	public List<Cart> validate(String username) throws IOException{
-		List<Cart> cart = getCart(username);
-		if(cart == null || cart.size() == 0){
-			throw new IOException(username +"");
-		}
-		
+	public Cart validate(Cart cart) throws IOException{
 		return cart;
 		
 	}
